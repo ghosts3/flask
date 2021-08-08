@@ -1,0 +1,56 @@
+.message {
+  font-weight: 600;
+  color: blue;
+}
+
+.alert {
+  background-color: pink;
+}
+
+.navbar {
+  background-color: lightslategray;
+  font-size: 1em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  padding: 8px 5px 8px 5px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-brand {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.navbar-item {
+  font-variant: small-caps;
+  margin-left: 30px;
+}
+
+.body-content {
+  padding: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loader {
+  display: none;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  border: 16px solid rgba(0, 0, 0, 0.4);
+  border-left: 16px solid #000;
+  animation: load 1000ms infinite linear;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

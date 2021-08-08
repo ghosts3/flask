@@ -1,0 +1,9 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block
+content %}
+<p>Validate and scan assignment</p>
+<form method="POST" id="submit-url">
+  {{ form.hidden_tag() }} {{ form.url.label}}{{form.url()}} {{ form.submit() }}
+  <div class="loader"></div>
+</form>
+
+{% endblock %}

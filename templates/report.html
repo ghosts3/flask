@@ -1,0 +1,42 @@
+{% extends "layout.html" %} {% block title %} Report {% endblock %} {% block
+content %} {% if url %}
+<p>Report for {{url}}</p>
+{% if response['connect_fail']%}
+<p>Site could not be found {{response['error']}}</p>
+<p>Exception info:</p>
+<p><code>{{response['exception']}}</code></p>
+{% elif response['num_errors'] > 0 %}
+<p>Did not validate</p>
+<p>{{response['num_errors']}} errors, {{response['num_warnings']}} warnings</p>
+<div class="errors">
+  <h2>Errors</h2>
+  <ul>
+    {% for message in response['errors']%}
+    <li>
+      <div>Line {{message['lastLine']}}</div>
+      <div>{{message['message']}}</div>
+      <div><code>{{message['extract']}}</code></div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="warnings">
+  <h2>Warnings</h2>
+  <ul>
+    {% for message in response['warnings']%}
+    <li>
+      <div>Line {{message['lastLine']}}</div>
+      <div>{{message['message']}}</div>
+      <div><code>{{message['extract']}}</code></div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% else %}
+<p>Validates!</p>
+{% if response['num_warnings'] > 0 %}
+<p>
+  but had {{response['num_warnings']}} warning{% if response['num_warnings'] > 1
+  %}s{% endif %}
+</p>
+{% endif %} {% endif %} {% endif %} {% endblock %}
