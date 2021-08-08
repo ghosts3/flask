@@ -57,8 +57,8 @@ def validate(siteURL, validator="https://validator.w3.org/nu/?out=json"):
  
     data = result['errors']
 
-    for key, group in groupby(data, key="message"):
-      print(key,": ",list(group))
+    # for key, group in groupby(data, key="message"):
+    #   print(key,": ",list(group))
      
   
     
